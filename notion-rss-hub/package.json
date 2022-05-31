@@ -1,0 +1,34 @@
+{
+  "name": "notion-rss-hub",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/MH4GF/notion-rss-hub.git",
+  "author": "MH4GF <h.miyagi.cnw@gmail.com>",
+  "scripts": {
+    "sync": "node -r esbuild-register src/index.ts",
+    "test": "vitest",
+    "compile": "tsc --noEmit",
+    "coverage": "vitest run --coverage",
+    "lint": "yarn fix:eslint && yarn fix:prettier",
+    "fix:eslint": "eslint . --ext .js,.ts,.jsx,.tsx --fix",
+    "fix:prettier": "prettier --write ."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "esbuild": "^0.14.38",
+    "esbuild-register": "^3.3.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4",
+    "vitest": "^0.12.1"
+  },
+  "dependencies": {
+    "@notionhq/client": "^0.3.1",
+    "dotenv": "^16.0.0",
+    "rss-parser": "^3.12.0"
+  }
+}
